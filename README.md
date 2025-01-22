@@ -1,25 +1,5 @@
-# README
+# 面接管理アプリ
+- 動機
+現在転職活動しており、一般的に転職活動では複数のアプリやエージェントを利用する。また、転職活動では面接や選考課題などステータスは頻繁に変わる。<br>
+そのため、現状の転職活動の状態をスムーズに理解し、現在の転職活動の状態を管理するニーズがある。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# interview_management_app
