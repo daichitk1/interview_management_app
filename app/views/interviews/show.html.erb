@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @interview %>
 
 <div>
-  <%= link_to "Edit this interview", edit_interview_path(@interview) %> |
-  <%= link_to "Back to interviews", interviews_path %>
+  <%= link_to "新規面接日程追加", new_interview_path(title: @interview.title), class: "btn btn-primary" %>
+  <%= link_to "編集", edit_interview_path(@interview), class:" btn btn-primary" %>
+  <%= link_to "企業一覧に戻る", interviews_path, class:" btn btn-primary" %>
 
-  <%= button_to "Destroy this interview", @interview, method: :delete %>
+  <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger" %>
 </div>

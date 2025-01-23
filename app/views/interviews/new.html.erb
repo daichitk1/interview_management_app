@@ -1,11 +1,8 @@
 <% content_for :title, "New interview" %>
-
-<h1>New interview</h1>
+<div>
+  <%= link_to "企業一覧に戻る", interviews_path, class: "btn btn-primary" %>
+</div>
+<h1>新規企業追加</h1>
 
 <%= render "form", interview: @interview %>
 
-<br>
-
-<div>
-  <%= link_to "Back to interviews", interviews_path %>
-</div>

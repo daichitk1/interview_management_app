@@ -1,12 +1,10 @@
 <% content_for :title, "Editing interview" %>
 
-<h1>Editing interview</h1>
+<h2>企業編集</h2>
 
 <%= render "form", interview: @interview %>
 
-<br>
-
 <div>
-  <%= link_to "Show this interview", @interview %> |
-  <%= link_to "Back to interviews", interviews_path %>
+  <%= link_to "企業詳細", @interview, class: "btn btn-primary" %>
+  <%= link_to "企業一覧", interviews_path, class: "btn btn-primary" %>
 </div>
