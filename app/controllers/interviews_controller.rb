@@ -23,6 +23,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1/edit
   def edit
+    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
   end
 
   # POST /interviews or /interviews.json
@@ -55,11 +56,9 @@ class InterviewsController < ApplicationController
 
   # DELETE /interviews/1 or /interviews/1.json
   def destroy
-    @interview.destroy!
+    if @interview.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to interviews_path, status: :see_other, notice: "Interview was successfully destroyed." }
-      format.json { head :no_content }
+      redirect_to interviews_path
     end
   end
 

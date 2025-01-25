@@ -23,10 +23,35 @@ h2 {
 h3 {
     padding: 10px;
     border: 4px dotted;
-    border-color: transparent transparent rgb(111, 111, 253) transparent;
+    border-color: transparent transparent blue transparent;
 }
 
 .h3-border {
     padding-bottom:  50px;
 }
 
+.dli-arrow-down {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    line-height: 1;
+    position: relative;
+    width: 0.1em;
+    height: 1em;
+    background: currentColor;
+}
+
+.dli-arrow-down::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    border: 0.1em solid currentColor;
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    position: absolute;
+    left: 50%;
+    bottom: -0.05em;
+    box-sizing: border-box;
+}

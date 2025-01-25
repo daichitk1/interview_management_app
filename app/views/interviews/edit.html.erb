@@ -1,10 +1,23 @@
 <% content_for :title, "Editing interview" %>
-
-<h2>企業編集</h2>
+<%= link_to "企業一覧", interviews_path, class: "btn btn-primary" %>
+<h2>面接編集</h2>
 
 <%= render "form", interview: @interview %>
 
-<div>
-  <%= link_to "企業詳細", @interview, class: "btn btn-primary" %>
-  <%= link_to "企業一覧", interviews_path, class: "btn btn-primary" %>
-</div>
+<div class="mt-5">
+    <h3>企業名: <%= @interview.title %></h3>
+    <% @interviews.each do |interview| %>
+      <div class="btn btn-outline-primary me-1">
+        <%= I18n.t(interview.status) %>
+      </div>
+      作成日：<%= interview.created_at.strftime('%Y年%m月%d日') %>
+      <%= link_to "編集", edit_interview_path(interview.id, title: interview.title), class:" btn btn-primary mx-5" %>
+      <div>
+        <span class="mx-5 dli-arrow-down"></span>
+      </div>
+      <br>
+    <% end %>
+  </div>
+
+
+
