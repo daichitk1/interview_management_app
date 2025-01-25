@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, :value => params[:title], class: "form-control w-25" %>
   </div>
 
   <div>
     <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
-    <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control" %>
+    <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control w-25" %>
   </div>
 
   <div class="my-3">

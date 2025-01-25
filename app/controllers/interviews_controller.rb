@@ -8,10 +8,12 @@ class InterviewsController < ApplicationController
     @second_interviews = Interview.where(status: "second_interview")
     @third_interviews = Interview.where(status: "third_interview")
     @get_hired_interviews = Interview.where(status: "get_hired")
+    @end_interviews = Interview.where(status: "end_interview")
   end
 
   # GET /interviews/1 or /interviews/1.json
   def show
+    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
   end
 
   # GET /interviews/new
