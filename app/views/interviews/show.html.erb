@@ -1,14 +1,12 @@
-<%= link_to "企業一覧に戻る", interviews_path, class:" btn btn-primary" %>
-
+<%= link_to "一覧", interviews_path, class:" btn btn-primary" %>
+<%= link_to "面接の進捗を追加", new_interview_path(title: @interview.title), class: "btn btn-primary" %>
 <div class="mt-5">
-  <%= link_to "新規面接日程追加", new_interview_path(title: @interview.title), class: "btn btn-primary" %>
   <h2>企業詳細</h2>
-  <div>
-    <%= link_to "編集", edit_interview_path(@interview, title: @interview.title), class:" btn btn-primary" %>
-    <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger" %>
-  </div>
-  <div class="mt-5">
+  <div class="mt-3">
     <h3>企業名: <%= @interview.title %></h3>
+    <div>
+      <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger mb-3" %>
+    </div>
     <% @interviews.each do |interview| %>
       <div class="btn btn-outline-primary me-1">
         <%= I18n.t(interview.status) %>
