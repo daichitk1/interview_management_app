@@ -16,6 +16,11 @@
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
+  <div>
+    <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
+    <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control" %>
+  </div>
+
   <div class="my-3">
     <%= form.submit class: "btn btn-primary" %>
   </div>

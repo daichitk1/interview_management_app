@@ -1,9 +1,13 @@
 class InterviewsController < ApplicationController
   before_action :set_interview, only: %i[ show edit update destroy ]
-
   # GET /interviews or /interviews.json
   def index
     @interviews = Interview.all
+    @document_submit_interviews = Interview.where(status: "document_submit")
+    @first_interviews = Interview.where(status: "first_interview")
+    @second_interviews = Interview.where(status: "second_interview")
+    @third_interviews = Interview.where(status: "third_interview")
+    @get_hired_interviews = Interview.where(status: "get_hired")
   end
 
   # GET /interviews/1 or /interviews/1.json
@@ -65,6 +69,6 @@ class InterviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def interview_params
-      params.expect(interview: [ :title ])
+      params.expect(interview: [ :title, :status ])
     end
 end

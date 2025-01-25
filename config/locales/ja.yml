@@ -1,0 +1,9 @@
+ja:
+  enum:
+    interview:
+      status:
+        document_submit: '書類選考'
+        first_interview: '1次面接'
+        second_interview: '2次面接'
+        third_interview: '3次面接'
+        get_hired: '内定'
