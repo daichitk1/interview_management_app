@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby "3.3.5"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -28,7 +28,6 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
-
 gem 'enum_help'
 
 # Reduces boot times through caching; required in config/boot.rb
