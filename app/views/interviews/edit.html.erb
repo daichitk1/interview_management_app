@@ -17,7 +17,7 @@
 
   <div>
     <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :title, :value => params[:title], class: "form-control w-25" %>
+    <%= form.text_field :title, :value => params[:title], required: true, class: "form-control w-25" %>
   </div>
 
   <div>

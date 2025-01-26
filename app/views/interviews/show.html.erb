@@ -8,7 +8,7 @@
       <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger mb-3" %>
     </div>
     <% @interviews.each do |interview| %>
-      <div class="btn btn-outline-primary me-1">
+      <div class="btn btn-outline-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : "primary" %> me-1">
         <%= I18n.t(interview.status) %>
       </div>
       作成日：<%= interview.created_at.strftime('%Y年%m月%d日') %>

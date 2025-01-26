@@ -32,6 +32,10 @@ class InterviewsController < ApplicationController
 
     respond_to do |format|
       if @interview.save
+
+        @company = Company.find_or_create_by(title: @interview.title)
+        @company.select_status = @interview.status
+        @company.save
         format.html { redirect_to @interview, notice: "Interview was successfully created." }
         format.json { render :show, status: :created, location: @interview }
       else
@@ -56,8 +60,17 @@ class InterviewsController < ApplicationController
 
   # DELETE /interviews/1 or /interviews/1.json
   def destroy
+    title = @interview.title
+    @company = Company.where(title: @interview.title).first
     if @interview.destroy!
-
+      @interviews = Interview.where(title: title)
+      if @interviews.present?
+        @recent_interview = Interview.where(title: title).order(created_at: :desc).first
+        @company.select_status = @recent_interview.status
+        @company.save
+      else
+        @company.destroy!
+      end
       redirect_to interviews_path
     end
   end
