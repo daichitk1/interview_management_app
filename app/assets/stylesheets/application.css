@@ -27,7 +27,7 @@ h3 {
 }
 
 .h3-border {
-    padding-bottom:  50px;
+    padding-bottom:  25px;
 }
 
 .dli-arrow-down {
@@ -58,7 +58,7 @@ h3 {
 
 .interview-container {
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px 200px;
     gap: 5px;
 }
 
@@ -70,4 +70,7 @@ h3 {
 }
 
 
-
+.btn-outline-secondary {
+    height: 40px;
+    margin: auto 30px;
+}
