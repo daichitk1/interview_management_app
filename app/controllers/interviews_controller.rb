@@ -83,6 +83,6 @@ class InterviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def interview_params
-      params.expect(interview: [ :title, :status ])
+      params.expect(interview: [ :title, :status, :content ])
     end
 end

@@ -7,12 +7,25 @@
     <div>
       <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger mb-3" %>
     </div>
+    <div class="interview-container interview-container-title mb-3">
+      <div>選考状況</div>
+      <div>作成日</div>
+      <div>コメント</div>
+      <div>編集ボタン</div>
+    </div>
     <% @interviews.each do |interview| %>
-      <div class="btn btn-outline-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : "primary" %> me-1">
-        <%= I18n.t(interview.status) %>
+      <div class="interview-container">
+        <div class="w-50 h-75 badge bg-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : "primary" %> ">
+          <%= I18n.t(interview.status) %>
+        </div>
+        <div><%= interview.created_at.strftime('%Y年%m月%d日') %></div>
+        <div>
+          <%= interview.content %>
+        </div>
+        <div>
+          <%= link_to "編集", edit_interview_path(interview.id, title: interview.title), class:" btn btn-primary" %>
+        </div>
       </div>
-      作成日：<%= interview.created_at.strftime('%Y年%m月%d日') %>
-      <%= link_to "編集", edit_interview_path(interview.id, title: interview.title), class:" btn btn-primary mx-5" %>
       <div>
         <span class="mx-5 dli-arrow-down"></span>
       </div>
