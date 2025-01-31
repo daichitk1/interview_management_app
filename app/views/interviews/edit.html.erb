@@ -14,40 +14,61 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-content">
+    <div>
+      <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
+      <%= form.text_field :title, :value => params[:title], required: true, class: "form-control w-25" %>
+    </div>
 
-  <div>
-    <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :title, :value => params[:title], required: true, class: "form-control w-25" %>
-  </div>
+    <div>
+      <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
+      <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control w-25" %>
+    </div>
 
-  <div>
-    <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
-    <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control w-25" %>
-  </div>
+    <div>
+      <%= form.label :content, "コメント",  style: "display: block", class: "my-3" %>
+      <%= form.text_field :content, class: "form-control w-50 h-100" %>
+    </div>
 
-  <div>
-    <%= form.label :content, "コメント",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :content, class: "form-control w-50 h-100" %>
-  </div>
-
-  <div class="my-3">
-    <%= form.submit "更新", class: "btn btn-primary" %>
+    <div class="my-3">
+      <%= form.submit "更新", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
 
 <div class="mt-5">
     <h3>企業名: <%= @interview.title %></h3>
-    <% @interviews.each do |interview| %>
-      <div class="btn btn-outline-primary me-1">
-        <%= I18n.t(interview.status) %>
+    <div class="interview">
+      <h4 class="mb-3">面接記録</h4>
+      <div class="interview-container interview-container-title mb-3">
+        <div>選考状況</div>
+        <div>作成日</div>
+        <div>コメント</div>
+        <div>編集ボタン</div>
+        <div>削除ボタン</div>
       </div>
-      作成日：<%= interview.created_at.strftime('%Y年%m月%d日') %>
-      <%= link_to "編集", edit_interview_path(interview.id, title: interview.title), class:" btn btn-primary mx-5" %>
-      <div>
-        <span class="mx-5 dli-arrow-down"></span>
-      </div>
-      <br>
-    <% end %>
+      <% @interviews.each do |interview| %>
+        <div class="interview-container">
+          <div class="w-50 h-75 badge bg-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : 'primary' %> ">
+            <%= I18n.t(interview.status) %>
+          </div>
+          <div><%= interview.created_at.strftime('%Y年%m月%d日') %></div>
+          <div>
+            <%= interview.content %>
+          </div>
+          <div>
+            <%= link_to "編集", edit_interview_path(interview.id, title: interview.title), class:" btn btn-primary" %>
+          </div>
+          <div>
+            <%= button_to "削除", @interview, method: :delete, class:" btn btn-danger" if Company.where(title: interview.title, select_status: interview.status).present? %>
+          </div>
+        </div>
+        <div>
+          <span class="mx-5 dli-arrow-down"></span>
+        </div>
+        <br>
+      <% end %>
+    </div>
   </div>
 
 

@@ -12,18 +12,26 @@
 body {
     max-width: 1000px;
     margin: 30px auto;
+    color: #2f2f37;
+    font-weight: 500;
 }
 
 h2 {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     border: 4px solid;
-    border-color: transparent transparent blue transparent;
+    margin-top: 20px;
+    border-color: transparent transparent rgb(76, 76, 159) transparent;
+    color: rgb(28, 28, 100);
+    font-weight: 500;
 }
 
 h3 {
-    padding: 10px;
-    border: 4px dotted;
-    border-color: transparent transparent blue transparent;
+    padding: 8px;
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(71, 71, 251);
+    font-weight: 500;
+
 }
 
 .h3-border {
@@ -63,14 +71,54 @@ h3 {
 }
 
 .interview-container-title {
-    border: 4px solid;
+    border: 4px solid #8aa3f6;
     margin: 5px 0 5px 0;
     padding: 5px;
     border-radius: 8px;
 }
 
 
-.btn-outline-secondary {
+.btn-outline-primary {
     height: 40px;
     margin: auto 30px;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.interview {
+    background-color: rgb(158, 226, 251);
+    padding: 20px 15px 100px 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.interview-log {
+    background-color: white;
+    padding: 4px;
+    border-radius: 8px;
+    width: 120px;
+}
+
+.interview-container-title {
+    background-color: white;
+}
+
+.form-content {
+    background-color: rgb(158, 251, 166);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.index-interviews-status {
+    background-color: rgb(139, 249, 255);
+    padding: 20px;
+    margin: 0 10px 10px 10px;
+    border-radius: 30px;
 }

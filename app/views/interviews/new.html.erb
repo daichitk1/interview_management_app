@@ -17,23 +17,25 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :title, :value => params[:title], required: true, class: "form-control w-25" %>
-  </div>
+  <div class="form-content">
+    <div>
+      <%= form.label :title, "企業名",  style: "display: block", class: "my-3" %>
+      <%= form.text_field :title, :value => params[:title], required: true, class: "form-control w-25" %>
+    </div>
 
-  <div>
-    <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
-    <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control w-25" %>
-  </div>
+    <div>
+      <%= form.label :status, "選考状況",  style: "display: block", class: "my-3" %>
+      <%= form.select :status, Interview.statuses_i18n.keys.map {|k| [I18n.t("enum.interview.status.#{k}"), k]}, {}, class: "form-control w-25" %>
+    </div>
 
-  <div>
-    <%= form.label :content, "コメント",  style: "display: block", class: "my-3" %>
-    <%= form.text_field :content, class: "form-control w-50 h-100" %>
-  </div>
+    <div>
+      <%= form.label :content, "コメント",  style: "display: block", class: "my-3" %>
+      <%= form.text_field :content, class: "form-control w-50 h-100" %>
+    </div>
 
-  <div class="my-3">
-    <%= form.submit "決定", class: "btn btn-primary" %>
+    <div class="my-3">
+      <%= form.submit "決定", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
 

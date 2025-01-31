@@ -1,14 +1,14 @@
 <% content_for :title, "Interviews" %>
-
+<div class="mb-5"><h4><b> (開発中)  選考状況、選考媒体など選考の状態と選考履歴を一括管理できるよう開発しています。</b></h4></div>
 <%= link_to "新規企業の面接日程追加", new_interview_path, class: "btn btn-primary" %>
 
-<div id="interviews">
-  <h2>選考状況</h2>
+<h2>選考状況</h2>
+<div class="index-interviews-status">
   <div class="h3-border d-flex">
     <h3>内定</h3>
     <% @get_hired_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
@@ -16,7 +16,7 @@
     <h3>3次面接</h3>
     <% @third_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
@@ -24,7 +24,7 @@
     <h3>2次面接</h3>
     <% @second_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
@@ -32,7 +32,7 @@
     <h3>1次面接</h3>
     <% @first_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
@@ -40,7 +40,7 @@
     <h3>書類選考</h3>
     <% @document_submit_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
@@ -48,7 +48,7 @@
     <h3>選考終了</h3>
     <% @end_interviews.each do |interview| %>
       <% if Company.where(title: interview.title, select_status: interview.status).present? %>
-        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-secondary" %>
+        <%= link_to interview.title, interview_path(interview.id, title: interview.title), class: "btn btn-outline-primary" %>
       <% end %>
     <% end %>
   </div>
