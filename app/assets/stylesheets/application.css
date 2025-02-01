@@ -68,6 +68,9 @@ h3 {
     display: grid;
     grid-template-columns: 200px 200px 200px 200px 200px;
     gap: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 8px;
 }
 
 .interview-container-title {
@@ -78,9 +81,10 @@ h3 {
 }
 
 
-.btn-outline-primary {
+.status-btn {
     height: 40px;
     margin: auto 30px;
+    border-radius: 10px;
 }
 
 .color-red {
@@ -121,4 +125,13 @@ h3 {
     padding: 20px;
     margin: 0 10px 10px 10px;
     border-radius: 30px;
+}
+
+.created-day {
+    margin: auto 0;
+}
+
+.interview-status {
+    margin:  auto 0;
+    text-align: middle;
 }
