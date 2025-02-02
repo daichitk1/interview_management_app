@@ -101,7 +101,7 @@ h3 {
 
 .interview {
     background-color: rgb(158, 226, 251);
-    padding: 20px 15px 100px 15px;
+    padding: 20px 15px 90px 15px;
     margin: 20px;
     border-radius: 8px;
 }
@@ -138,4 +138,15 @@ h3 {
 .interview-status {
     margin:  auto 0;
     text-align: middle;
+}
+
+.current-add-btn {
+    border-radius: 8px;
+    background-color: #d7e0ff;
+    padding: 15px;
+}
+
+.current-add-btn:hover {
+    background-color: #4e73fb;
+    color: white;
 }
