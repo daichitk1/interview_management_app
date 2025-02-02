@@ -12,7 +12,7 @@
         <div>編集ボタン</div>
         <div>削除ボタン</div>
       </div>
-      <% interviews.each do |interview| %>
+      <% @interviews.each do |interview| %>
         <div class="interview-container">
           <div class="w-50 h-75 badge bg-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : 'primary' %> ">
             <%= I18n.t(interview.status) %>
