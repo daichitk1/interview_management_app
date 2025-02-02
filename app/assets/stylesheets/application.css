@@ -87,6 +87,10 @@ h3 {
     border-radius: 10px;
 }
 
+.create-day {
+   margin: auto 30px;
+}
+
 .color-red {
     color: red;
 }
