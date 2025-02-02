@@ -78,7 +78,8 @@ class InterviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_interview
-      @interview = Interview.find(params.expect(:id))
+      @interview = Interview.find_by(id: params.expect(:id))
+      redirect_to interviews_path if @interview.nil?
     end
 
     # Only allow a list of trusted parameters through.
