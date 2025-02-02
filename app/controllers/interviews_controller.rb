@@ -13,7 +13,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1 or /interviews/1.json
   def show
-    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
+    @interviews = Interview.where(title: @interview.title).order(created_at: :asc)
   end
 
   # GET /interviews/new
@@ -23,7 +23,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1/edit
   def edit
-    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
+    @interviews = Interview.where(title: @interview.title).order(created_at: :asc)
   end
 
   # POST /interviews or /interviews.json
