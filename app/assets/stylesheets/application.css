@@ -172,5 +172,10 @@ h3 {
     }
     .interview {
        margin: 0 0 20px 0;
+       padding: 10px;
+    }
+    .btn {
+        height: 30px;
+        font-size: 10px;
     }
 }
