@@ -150,3 +150,27 @@ h3 {
     background-color: #4e73fb;
     color: white;
 }
+
+@media (max-width: 600px){
+    body {
+    max-width: 420px;
+    font-size: 10px;
+    }
+
+    .interview-container {
+        display: grid;
+        grid-template-columns: 70px 70px 70px 70px 70px;
+        gap: 5px;
+        border-radius: 2px;
+        padding: 2px;
+    }
+    .bg-primary {
+        height: 20px;
+    }
+    .create-day {
+        margin: 0 5px;
+    }
+    .interview {
+       margin: 0 0 20px 0;
+    }
+}

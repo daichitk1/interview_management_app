@@ -13,10 +13,10 @@
       </div>
       <% @interviews.each do |interview| %>
         <div class="interview-container mb-3">
-          <div class="w-50 h-75 badge bg-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : 'primary' %> ">
+          <div class="w-75 h-75 badge bg-<%= Company.where(title: interview.title, select_status: interview.status).present? ? 'danger' : 'primary' %> ">
             <%= I18n.t(interview.status) %>
           </div>
-          <div class="create-day"><%= interview.created_at.strftime('%Y年%m月%d日') %></div>
+          <div class="create-day"><%= interview.created_at.strftime('%Y年') %><br><%= interview.created_at.strftime('%m月%d日') %></div>
           <div>
             <%= interview.content %>
           </div>
