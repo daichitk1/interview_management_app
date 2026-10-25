@@ -12,22 +12,30 @@
 body {
     max-width: 1000px;
     margin: 30px auto;
+    color: #2f2f37;
+    font-weight: 500;
 }
 
 h2 {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     border: 4px solid;
-    border-color: transparent transparent blue transparent;
+    margin-top: 20px;
+    border-color: transparent transparent rgb(76, 76, 159) transparent;
+    color: rgb(28, 28, 100);
+    font-weight: 500;
 }
 
 h3 {
-    padding: 10px;
-    border: 4px dotted;
-    border-color: transparent transparent blue transparent;
+    padding: 8px;
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(71, 71, 251);
+    font-weight: 500;
+
 }
 
 .h3-border {
-    padding-bottom:  50px;
+    padding-bottom:  25px;
 }
 
 .dli-arrow-down {
@@ -54,4 +62,120 @@ h3 {
     left: 50%;
     bottom: -0.05em;
     box-sizing: border-box;
+}
+
+.interview-container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    gap: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.interview-container-title {
+    border: 4px solid #8aa3f6;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+.status-btn {
+    height: 40px;
+    margin: auto 30px;
+    border-radius: 10px;
+}
+
+.create-day {
+   margin: auto 30px;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.interview {
+    background-color: rgb(158, 226, 251);
+    padding: 20px 15px 90px 15px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.interview-log {
+    background-color: white;
+    padding: 4px;
+    border-radius: 8px;
+    width: 120px;
+}
+
+.interview-container-title {
+    background-color: white;
+}
+
+.form-content {
+    background-color: rgb(158, 251, 166);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.index-interviews-status {
+    background-color: rgb(139, 249, 255);
+    padding: 20px;
+    margin: 0 10px 10px 10px;
+    border-radius: 30px;
+}
+
+.created-day {
+    margin: auto 0;
+}
+
+.interview-status {
+    margin:  auto 0;
+    text-align: middle;
+}
+
+.current-add-btn {
+    border-radius: 8px;
+    background-color: #d7e0ff;
+    padding: 15px;
+}
+
+.current-add-btn:hover {
+    background-color: #4e73fb;
+    color: white;
+}
+
+@media (max-width: 600px){
+    body {
+    max-width: 420px;
+    font-size: 10px;
+    }
+
+    .interview-container {
+        display: grid;
+        grid-template-columns: 70px 70px 70px 70px 70px;
+        gap: 5px;
+        border-radius: 2px;
+        padding: 2px;
+    }
+    .bg-primary {
+        height: 20px;
+    }
+    .create-day {
+        margin: 0 5px;
+    }
+    .interview {
+       margin: 0 0 20px 0;
+       padding: 10px;
+    }
+    .btn {
+        height: 30px;
+        font-size: 10px;
+    }
 }

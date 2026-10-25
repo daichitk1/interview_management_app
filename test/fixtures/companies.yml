@@ -1,9 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  select_status: MyString
+  title: Example Company One
+  select_status: document_submit
 
 two:
-  title: MyString
-  select_status: MyString
+  title: Example Company Two
+  select_status: first_interview

@@ -13,7 +13,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1 or /interviews/1.json
   def show
-    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
+    @interviews = Interview.where(title: @interview.title).order(created_at: :asc)
   end
 
   # GET /interviews/new
@@ -23,7 +23,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1/edit
   def edit
-    @interviews = Interview.where(title: params[:title]).order(created_at: :asc)
+    @interviews = Interview.where(title: @interview.title).order(created_at: :asc)
   end
 
   # POST /interviews or /interviews.json
@@ -52,6 +52,7 @@ class InterviewsController < ApplicationController
         format.html { redirect_to @interview, notice: "Interview was successfully updated." }
         format.json { render :show, status: :ok, location: @interview }
       else
+        @interviews = Interview.where(title: @interview.title_in_database).order(created_at: :asc)
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @interview.errors, status: :unprocessable_entity }
       end
@@ -78,11 +79,12 @@ class InterviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_interview
-      @interview = Interview.find(params.expect(:id))
+      @interview = Interview.find_by(id: params.expect(:id))
+      redirect_to interviews_path if @interview.nil?
     end
 
     # Only allow a list of trusted parameters through.
     def interview_params
-      params.expect(interview: [ :title, :status ])
+      params.expect(interview: [ :title, :status, :content ])
     end
 end
