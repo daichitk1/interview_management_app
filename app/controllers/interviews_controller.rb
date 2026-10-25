@@ -52,6 +52,7 @@ class InterviewsController < ApplicationController
         format.html { redirect_to @interview, notice: "Interview was successfully updated." }
         format.json { render :show, status: :ok, location: @interview }
       else
+        @interviews = Interview.where(title: @interview.title_in_database).order(created_at: :asc)
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @interview.errors, status: :unprocessable_entity }
       end
