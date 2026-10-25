@@ -17,7 +17,7 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create interview" do
     assert_difference("Interview.count") do
-      post interviews_url, params: { interview: { title: @interview.title } }
+      post interviews_url, params: { interview: { title: "New Company", status: "document_submit", content: "Application sent" } }
     end
 
     assert_redirected_to interview_url(Interview.last)
@@ -36,6 +36,15 @@ class InterviewsControllerTest < ActionDispatch::IntegrationTest
   test "should update interview" do
     patch interview_url(@interview), params: { interview: { title: @interview.title } }
     assert_redirected_to interview_url(@interview)
+  end
+
+  test "invalid update renders the edit form and history" do
+    patch interview_url(@interview), params: { interview: { title: "" } }
+    assert_response :unprocessable_entity
+    assert_select "h2", "面接編集"
+    assert_select "h4", "面接記録"
+    assert_select "a[href=?]", edit_interview_path(@interview, title: @interview.title), text: "編集"
+    assert_equal "Example Company One", @interview.reload.title
   end
 
   test "should destroy interview" do
