@@ -1,12 +1,18 @@
+# Dependabotによる自動更新PRは停止。脆弱性通知の設定は変更しない。
+# open-pull-requests-limit: 0 は通常更新を止め、ignore はセキュリティ更新も対象外にする。
 version: 2
 updates:
 - package-ecosystem: bundler
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 0
+  ignore:
+    - dependency-name: "*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 0
+  ignore:
+    - dependency-name: "*"
